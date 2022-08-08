@@ -45,7 +45,7 @@ class RunningTimeMiddleware
             $log = [
                 'time' => round(microtime(true) - LARAVEL_START, 2),
                 'path' => $path,
-                'params' => json_encode(['route_params' => $request->route() ? $request->route()->parameters() : null, 'params' => $request->all()], JSON_UNESCAPED_UNICODE),
+                'params' => json_encode([], JSON_UNESCAPED_UNICODE),
             ];
 
             $logText = implode('||', $log) . "\n";
